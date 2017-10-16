@@ -3,3 +3,8 @@ F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\Serv
 F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\Server\bin\Debug\Server.pdb
 F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\Server\obj\Debug\Server.exe
 F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\Server\obj\Debug\Server.pdb
+e:\Mentoring\MultiThreadingPipeChat\Server\bin\Debug\Server.exe.config
+e:\Mentoring\MultiThreadingPipeChat\Server\bin\Debug\Server.exe
+e:\Mentoring\MultiThreadingPipeChat\Server\bin\Debug\Server.pdb
+e:\Mentoring\MultiThreadingPipeChat\Server\obj\Debug\Server.exe
+e:\Mentoring\MultiThreadingPipeChat\Server\obj\Debug\Server.pdb

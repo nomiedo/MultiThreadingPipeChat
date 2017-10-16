@@ -13,10 +13,10 @@ namespace Server
     {
         bool running;
         Thread runningThread;
-        Thread messageThread;
         EventWaitHandle terminateHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
         List<string> messages = new List<string>();
- 
+        object lockObject = new object();
+
         static void Main(string[] args)
         {
             Program server = new Program();
@@ -51,32 +51,62 @@ namespace Server
 
         public void ProcessNextClient()
         {
-            NamedPipeServerStream pipeStream = new NamedPipeServerStream("TestPipe", PipeDirection.InOut, 254);
+            NamedPipeServerStream pipeStream = new NamedPipeServerStream("TestPipe", PipeDirection.InOut, 254, PipeTransmissionMode.Message);
+
             StreamReader reader = new StreamReader(pipeStream);
             StreamWriter writer = new StreamWriter(pipeStream);
-
+            Console.WriteLine("Server waiting for a connection...");
             pipeStream.WaitForConnection();
 
-            Task.Factory.StartNew(() =>
+            Console.Write("A client has connected, send a greeting from the server: ");
+            string message = Console.ReadLine();
+            byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+            pipeStream.Write(messageBytes, 0, messageBytes.Length);
+
+            string response = ProcessSingleReceivedMessage(pipeStream);
+            Console.WriteLine("The client has responded: {0}", response);
+            while (response != "x")
             {
-                while (true)
-                {
-                    var line = reader.ReadLine();
-                    messages.Add(line);
-                    Console.WriteLine(line);
+                Console.Write("Send a response from the server: ");
+                message = Console.ReadLine();
+                messageBytes = Encoding.UTF8.GetBytes(message);
+                pipeStream.Write(messageBytes, 0, messageBytes.Length);
+                response = ProcessSingleReceivedMessage(pipeStream);
+                Console.WriteLine("The client is saying {0}", response);
+            }
 
-                        writer.WriteLine(line);
-                        writer.Flush();
+            Console.WriteLine("The client has ended the conversation.");
 
-                    //foreach (var message in messages)
-                    //{
-                    //    writer.WriteLine(message);
-                    //    writer.Flush();
-                    //}
-                }
-            });
+        }
 
-            
+        //public void Read(StreamReader reader)
+        //{
+        //    var line = reader.ReadLine();
+        //    messages.Add(line);
+        //    Console.WriteLine(line);
+        //}
+
+        //public void Write(StreamWriter writer, string line)
+        //{
+        //    messages.Add(line);
+        //    writer.WriteLine(line);
+        //    writer.Flush();
+        //}
+
+        private static string ProcessSingleReceivedMessage(NamedPipeServerStream namedPipeServer)
+        {
+            StringBuilder messageBuilder = new StringBuilder();
+            string messageChunk = string.Empty;
+            byte[] messageBuffer = new byte[5];
+            do
+            {
+                namedPipeServer.Read(messageBuffer, 0, messageBuffer.Length);
+                messageChunk = Encoding.UTF8.GetString(messageBuffer);
+                messageBuilder.Append(messageChunk);
+                messageBuffer = new byte[messageBuffer.Length];
+            }
+            while (!namedPipeServer.IsMessageComplete);
+            return messageBuilder.ToString();
         }
     }
 }

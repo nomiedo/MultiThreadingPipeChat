@@ -9,5 +9,7 @@ F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\Test
 F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\obj\Debug\TestConnection.exe
 F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\obj\Debug\TestConnection.pdb
 e:\Mentoring\MultiThreadingPipeChat\TestConnection\bin\Debug\TestConnection.exe.config
+e:\Mentoring\MultiThreadingPipeChat\TestConnection\bin\Debug\TestConnection.exe
+e:\Mentoring\MultiThreadingPipeChat\TestConnection\bin\Debug\TestConnection.pdb
 e:\Mentoring\MultiThreadingPipeChat\TestConnection\obj\Debug\TestConnection.exe
 e:\Mentoring\MultiThreadingPipeChat\TestConnection\obj\Debug\TestConnection.pdb
