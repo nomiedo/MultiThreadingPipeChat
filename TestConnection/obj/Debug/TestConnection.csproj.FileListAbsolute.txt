@@ -1,0 +1,13 @@
+D:\TESTPRO\MultithreadingChat\TestConnection\bin\Debug\TestConnection.exe.config
+D:\TESTPRO\MultithreadingChat\TestConnection\bin\Debug\TestConnection.exe
+D:\TESTPRO\MultithreadingChat\TestConnection\bin\Debug\TestConnection.pdb
+D:\TESTPRO\MultithreadingChat\TestConnection\obj\Debug\TestConnection.exe
+D:\TESTPRO\MultithreadingChat\TestConnection\obj\Debug\TestConnection.pdb
+F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\bin\Debug\TestConnection.exe.config
+F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\bin\Debug\TestConnection.exe
+F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\bin\Debug\TestConnection.pdb
+F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\obj\Debug\TestConnection.exe
+F:\Education\Mentoring\D2-D3\01. Multi-Threading in .NET\MultithreadingChat\TestConnection\obj\Debug\TestConnection.pdb
+e:\Mentoring\MultiThreadingPipeChat\TestConnection\bin\Debug\TestConnection.exe.config
+e:\Mentoring\MultiThreadingPipeChat\TestConnection\obj\Debug\TestConnection.exe
+e:\Mentoring\MultiThreadingPipeChat\TestConnection\obj\Debug\TestConnection.pdb
